@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: syllabus-ai
+    env: docker
+    plan: free
+    dockerfilePath: backend/Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "1"
